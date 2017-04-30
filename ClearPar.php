@@ -1,5 +1,4 @@
 <?php
-
 /**
  * ClearPar (class)
  *
@@ -8,8 +7,11 @@
  * @package StringTools
  * @version 1.0
  */
-class ClearPar {
 
+namespace StringTools;
+
+class ClearPar
+{
     /**
      * @name $total_par
      * @var int Atributo que almacena cantidad total de pares de parentesis.
@@ -51,7 +53,8 @@ class ClearPar {
      * @access public
      * @param string $str Cadna de texto ingresada por usuario.
      */
-    public function build($str) {
+    public function build($str)
+    {
         try {
             //Validamos el dato ingresado.
             $this->validate($str);
@@ -71,7 +74,8 @@ class ClearPar {
      * @access private
      * @param string $str Cadena de texto que ingresa el usuario.
      */
-    private function validate($str) {
+    private function validate($str)
+    {
         if (is_array($str)) {
             throw new Exception(utf8_encode("El valor ingresado debe contener texto y/o números."));
         }
@@ -84,7 +88,8 @@ class ClearPar {
      * @name searchPar
      * @access private
      */
-    private function searchPar() {
+    private function searchPar()
+    {
         //Almacenamos la cantidad de caracteres.
         $total = strlen($this->str);
         for ($i = 0; $i <= $total - 1; $i++) {
@@ -100,7 +105,8 @@ class ClearPar {
      * @name printResult
      * @access private
      */
-    private function printResult() {
+    private function printResult()
+    {
         print $this->result.PHP_EOL;
     }
 
@@ -111,7 +117,8 @@ class ClearPar {
      * @param string $f_str primer caracter
      * @param string $s_str segundo caracter
      */
-    private function countPar($f_str, $s_str) {
+    private function countPar($f_str, $s_str)
+    {
         if ($f_str === $this->f_par && $s_str === $this->s_par) {
             //Almacenamos cantidad de parentesis encontrado en atributo.
             $this->total_par+=1;
@@ -125,17 +132,8 @@ class ClearPar {
      * @param Exception $ex Exception
      * @access private
      */
-    private function printException($ex) {
-        print 'Exception: ' . $ex->getMessage() . PHP_EOL;
+    private function printException($ex)
+    {
+        print 'Exception: '.$ex->getMessage().PHP_EOL;
     }
-
 }
-//Instanciamos la clase ClearPar en $obj
-$obj = new ClearPar();
-//Invocamos al método build pasandole el valor ingresado por el usuario.
-$obj->build($argv[1]);
-
-/**
- * Ejemplo de como usarlo
- * > php ClearPar.php "(()()y)_)(h2())6))"
- */

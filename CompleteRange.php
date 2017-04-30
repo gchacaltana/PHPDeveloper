@@ -1,5 +1,4 @@
 <?php
-
 /**
  * CompleteRange (class)
  *
@@ -8,8 +7,11 @@
  * @package ArrayTools
  * @version 1.0
  */
-class CompleteRange {
 
+namespace ArrayTools;
+
+class CompleteRange
+{
     /**
      * @name $total_numbers
      * @var int Atributo que almacena cantidad de números del array ingresado.
@@ -38,7 +40,8 @@ class CompleteRange {
      * @param array $range Array de números
      * @return array Nuevo array completado de números.
      */
-    public function build($range) {
+    public function build($range)
+    {
         try {
             //Validamos array recibido
             $this->validate($range);
@@ -57,7 +60,8 @@ class CompleteRange {
      * @name completeNumbers
      * @access private
      */
-    private function completeNumbers() {
+    private function completeNumbers()
+    {
         //Almacenamos el primer número en $fn
         $fn = $this->range[0];
         //Almacenamos ultimo número en $ln
@@ -73,8 +77,9 @@ class CompleteRange {
      * @name printRange
      * @access private
      */
-    private function printRange() {
-        print_r($this->nrange) . PHP_EOL;
+    private function printRange()
+    {
+        print_r($this->nrange).PHP_EOL;
     }
 
     /**
@@ -83,8 +88,9 @@ class CompleteRange {
      * @param Exception $ex Exception
      * @access private
      */
-    private function printException($ex) {
-        print 'Exception: ' . $ex->getMessage() . PHP_EOL;
+    private function printException($ex)
+    {
+        print 'Exception: '.$ex->getMessage().PHP_EOL;
     }
 
     /**
@@ -93,7 +99,8 @@ class CompleteRange {
      * @param array $range Array de números
      * @access private
      */
-    private function validate($range) {
+    private function validate($range)
+    {
         //Validamos que el dato ingresado sea un array.
         if (!is_array($range)) {
             throw new Exception(utf8_encode("El valor ingresado no es un array."));
@@ -113,15 +120,3 @@ class CompleteRange {
         $this->range = $range;
     }
 }
-
-//Instanciamos la clase CompleteRange en $obj
-$obj = new CompleteRange();
-//Array de números que ingresaremos al método build.
-$range = array(33,41,49);
-//Invocamos al método build pasandole el array $range
-$obj->build($range);
-
-/**
- * Ejemplo de como usarlo
- * > php CompleteRange.php
- */

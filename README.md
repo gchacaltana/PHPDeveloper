@@ -5,17 +5,17 @@ This repository contains PHP exercises on string handling, number array, error h
 # ChangeString.php
 
 ```ssh
-$ > php ChangeString.php "abgd_23TsF[de)"
+$ > php test_ChangeString.php "abgd_23TsF[de)"
 ```
 
 # CompleteRange.php
 
 ```ssh
-$ > php CompleteRange.php
+$ > php test_CompleteRange.php
 ```
 
 # ClearPar.php
 
 ```ssh
-$ > php ClearPar.php "((()()y)_)(h2())6))()(%(()"
+$ > php test_ClearPar.php "((()()y)_)(h2())6))()(%(()"
 ```
