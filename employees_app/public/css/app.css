@@ -1,0 +1,54 @@
+body {
+    margin: 50px 0 0 0;
+    padding: 0;
+    width: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: #aaa;
+    font-size: 18px;
+}
+
+h1 {
+    color: #719e40;
+    letter-spacing: -3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 100px;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+.tabla {
+    width: 85%;
+    margin: 5px auto;
+    border:1px solid #DDDDDD;
+    background-color: #F7F7F9;
+    margin-bottom: 20px;
+}
+.tabla td  {
+    border: 1px solid #DDD;
+    text-align: left;
+    padding-left: 5px;
+}
+.tabla td.salary  {
+    text-align: right;
+    padding-right: 10px;
+    border: 1px solid #DDD;
+}
+
+.tabla th {
+    border: 1px solid #DDD;
+    background-color: #DDD;
+    color: #000;
+}
+
+.tabla_info {
+    width: 55%;
+    border-collapse: collapse;
+    border:0px solid #fff;
+    text-align: left;
+    margin:10px auto;
+}
+
+.tabla_info td.title {
+    font-weight: 900;
+}

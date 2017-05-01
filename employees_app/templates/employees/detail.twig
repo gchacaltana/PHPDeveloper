@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Información del Empleado</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href='{{ base_url }}/css/app.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        {% if employee %}
+            <h2>Empleado ID {{ employee.id }}</h2>
+            <table class="tabla_info">
+                <tr>
+                    <td class="title">Nombre: </td><td>{{ employee. name }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Email: </td><td>{{ employee. email }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Teléfono: </td><td>{{ employee. phone }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Dirección: </td><td>{{ employee. address }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Posición: </td><td>{{ employee. position }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Salario: </td><td>{{ employee. salary }}</td>
+                </tr>
+                <tr>
+                    <td class="title">Habilidades: </td><td><ul>
+                            {% for s in employee.skills %}
+                                <li>{{ s.skill }}</li>
+                                {% endfor %}
+                        </ul></td>
+                </tr>
+            </table>
+        {% else %}
+            <h3>No se encontraron registros.</h3>
+        {% endif %}
+        <br/>
+        <a href="{{ base_url }}/api/employees">Lista de Empleados</a>
+    </body>
+</html>
